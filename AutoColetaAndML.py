@@ -50,15 +50,12 @@ modelo = ExtraTreesClassifier(n_estimators=60,
                               max_samples=None)
 
 modelo.fit(x_treino, y_treino)
-
 resultado = modelo.score(x_teste, y_teste)
 #print("Acurácia:", (resultado*100))
 
 chromedrive_path = 'C:/Users/lfsou/Desktop/drive/chromedriver.exe'
 webdriver = webdriver.Chrome(executable_path=chromedrive_path)
 webdriver.get('https://blaze.com/pt/games/crash')
-options = Options()
-options.add_argument('--headless')
 cont = 0
 Data = []
 k = 'o'

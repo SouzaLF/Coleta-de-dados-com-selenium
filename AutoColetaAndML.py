@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import ExtraTreesClassifier
 
-Data = pd.read_excel('C:/Users/lfsou/Desktop/PROGRAMAÇÃO/Blaze/TOTAL.xlsx')
+Data = pd.read_excel('Dados.xlsx')
 Data['Dia'] = pd.to_datetime(Data['Dia'])
 Data['Hora'] = pd.to_timedelta(Data['Hora'])
 Horas = pd.DataFrame(Data['Hora'].dt.total_seconds()).reset_index(drop=True)
@@ -53,7 +53,7 @@ modelo.fit(x_treino, y_treino)
 resultado = modelo.score(x_teste, y_teste)
 #print("Acurácia:", (resultado*100))
 
-chromedrive_path = 'C:/Users/lfsou/Desktop/drive/chromedriver.exe'
+chromedrive_path = 'chromedriver.exe'
 webdriver = webdriver.Chrome(executable_path=chromedrive_path)
 webdriver.get('https://blaze.com/pt/games/crash')
 cont = 0

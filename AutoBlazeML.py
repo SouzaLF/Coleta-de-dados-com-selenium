@@ -20,7 +20,6 @@ Data.loc[Data.Multiplicador<=9.42,'Resultado']=0
 Data['Resultado1'] = Data['Resultado'].shift(-2)
 Data = Data.drop(['Dia', 'Multiplicador', 'ID', 'Resultado'], axis=1)
 Data = Data.dropna()
-Data
 
 y = Data['Resultado1']
 x = Data.drop('Resultado1', axis=1)
